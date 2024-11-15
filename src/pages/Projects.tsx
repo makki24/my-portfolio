@@ -43,14 +43,15 @@ const Projects: React.FC = () => {
                                     <Card.Text><strong>Duration:</strong> {project.duration}</Card.Text>
                                     <Card.Text>{project.description.slice(0, 100)}...</Card.Text> {/* Short description */}
                                 </Card.Body>
-                                <Card.Footer className={"align-self-end"}>
-                                    <Link to={`/projects/${project.id}`}>
+                                <Card.Footer>
+                                    <Link to={`/projects/${project.id}`} className={"float-end"}>
                                         <Button variant="primary">View Details</Button>
                                     </Link>
                                 </Card.Footer>
                             </Card>
                         </Col>
                     ))}
+                    <span>Many more to be added...</span>
                 </Row>
             )}
         </Container>

@@ -17,7 +17,7 @@ function App() {
       <Router>
         <MyNavbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} /> {/* Dynamic route */}
           <Route path="/about" element={<About />} />
