@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+  border-radius: 50%; /* Optional: Make it look like a circular button */
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Optional: Change hover effects */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}

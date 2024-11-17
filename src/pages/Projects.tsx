@@ -1,11 +1,8 @@
-// src/pages/Projects.tsx
-
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button, Spinner, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { fetchProjects } from '../services/projectService';
-import {Project} from "../data/projectsData";
-
+import { Project } from "../data/projectsData";
 
 const Projects: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -35,7 +32,16 @@ const Projects: React.FC = () => {
                                 <Card.Body>
                                     <Card.Title>{project.title}</Card.Title>
                                     <Card.Text><strong>Duration:</strong> {project.duration}</Card.Text>
+                                    <div>
+                                        {project.technologies.slice(0, 4).map((tech, index) => (
+                                            <Badge bg="info" className="me-2 mb-2" key={index}>
+                                                {tech}
+                                            </Badge>
+                                        ))}
+                                    </div>
                                     <Card.Text>{project.description.slice(0, 100)}...</Card.Text>
+                                    {/* Skills/Technologies Badges */}
+
                                 </Card.Body>
                                 <Card.Footer>
                                     {project.clientProject && (
@@ -56,6 +62,5 @@ const Projects: React.FC = () => {
         </Container>
     );
 };
-
 
 export default Projects;

@@ -1,37 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, ListGroup, Spinner } from 'react-bootstrap';
+import { Container, ListGroup, Spinner, Carousel } from 'react-bootstrap';
 import { fetchProjects } from '../services/projectService';
 import {Project} from "../data/projectsData";
 
-
-
 const ProjectDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
-    const [project, setProject] = useState<Project | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [project, setProject] = React.useState<Project | null>(null);
 
-    useEffect(() => {
+    React.useEffect(() => {
         const getProject = async () => {
             const data = await fetchProjects();
-            const foundProject = (data as Project[]).find((proj) => proj.id === id);
+            const foundProject = data.find((proj: Project) => proj.id === id);
             setProject(foundProject || null);
-            setLoading(false);
         };
         getProject();
     }, [id]);
 
-    if (loading) {
-        return (
-            <Spinner animation="border" role="status" className="d-block mx-auto">
-                <span className="visually-hidden">Loading...</span>
-            </Spinner>
-        );
-    }
-
-    if (!project) {
-        return <p>Project not found.</p>;
-    }
+    if (!project) return <p>Loading...</p>;
 
     return (
         <Container className="py-5">
@@ -42,7 +28,24 @@ const ProjectDetail: React.FC = () => {
                 <div className="ratio ratio-21x9">
                     <iframe src={project.youtubeUrl} title="YouTube video" allowFullScreen></iframe>
                 </div>
+            )}
 
+            {project.images && project.images.length > 0 && (
+                <Carousel className="my-4">
+                    {project.images.map((image, index) => (
+                        <Carousel.Item key={index}>
+                            <img
+                                className="d-block w-100"
+                                src={image}
+                                alt={`Screenshot ${index + 1}`}
+                                style={{
+                                    maxHeight: '400px', // Limit the height
+                                    objectFit: 'contain' // Maintain aspect ratio
+                                }}
+                            />
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
             )}
             <h4 className="text-start mt-4">My Contributions</h4>
             <ListGroup className="text-start">
