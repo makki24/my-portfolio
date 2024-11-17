@@ -1,17 +1,11 @@
 // src/pages/Projects.tsx
 
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, Button, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Spinner, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { fetchProjects } from '../services/projectService';
+import {Project} from "../data/projectsData";
 
-interface Project {
-    id: string;
-    title: string;
-    duration: string;
-    description: string;
-    technologies: string[];
-}
 
 const Projects: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -28,7 +22,7 @@ const Projects: React.FC = () => {
 
     return (
         <Container className="py-5">
-            <h2 className="text-center mb-4">Projects</h2>
+            <h2 className="text-start mb-4">Projects</h2>
             {loading ? (
                 <Spinner animation="border" role="status" className="d-block mx-auto">
                     <span className="visually-hidden">Loading...</span>
@@ -41,10 +35,15 @@ const Projects: React.FC = () => {
                                 <Card.Body>
                                     <Card.Title>{project.title}</Card.Title>
                                     <Card.Text><strong>Duration:</strong> {project.duration}</Card.Text>
-                                    <Card.Text>{project.description.slice(0, 100)}...</Card.Text> {/* Short description */}
+                                    <Card.Text>{project.description.slice(0, 100)}...</Card.Text>
                                 </Card.Body>
                                 <Card.Footer>
-                                    <Link to={`/projects/${project.id}`} className={"float-end"}>
+                                    {project.clientProject && (
+                                        <Badge bg="warning" className="ms-2 float-start">
+                                            Client Project
+                                        </Badge>
+                                    )}
+                                    <Link to={`/projects/${project.id}`} className="float-end">
                                         <Button variant="primary">View Details</Button>
                                     </Link>
                                 </Card.Footer>
@@ -57,5 +56,6 @@ const Projects: React.FC = () => {
         </Container>
     );
 };
+
 
 export default Projects;

@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe8230c7-f9a6-4145-9351-1c6c6c6789c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/projectsData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/About.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Contact.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ProjectDetail.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Projects.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/projectService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/projectsData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/projectsData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProjectDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProjectDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Projects.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/maqthyar/d/projects/MyPortfolio/ui/my-portfolio&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/maqthyar/d/projects/MyPortfolio/ui/my-portfolio/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -57,6 +50,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,6 +73,10 @@
       <updated>1731141560629</updated>
       <workItem from="1731141561674" duration="6073000" />
       <workItem from="1731674198761" duration="611000" />
+      <workItem from="1731678723457" duration="2972000" />
+      <workItem from="1731763921720" duration="24000" />
+      <workItem from="1731765989517" duration="38000" />
+      <workItem from="1731839900414" duration="2803000" />
     </task>
     <servers />
   </component>

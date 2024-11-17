@@ -1,17 +1,10 @@
-// src/pages/ProjectDetail.tsx
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, ListGroup, Spinner } from 'react-bootstrap';
 import { fetchProjects } from '../services/projectService';
+import {Project} from "../data/projectsData";
 
-interface Project {
-    id: string;
-    title: string;
-    duration: string;
-    description: string;
-    technologies: string[];
-}
+
 
 const ProjectDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -45,7 +38,20 @@ const ProjectDetail: React.FC = () => {
             <h2 className="text-start">{project.title}</h2>
             <p className="text-start"><strong>Duration:</strong> {project.duration}</p>
             <p className="text-start">{project.description}</p>
-            <h4 className="text-start">Technologies Used</h4>
+            {project.youtubeUrl && (
+                <div className="ratio ratio-21x9">
+                    <iframe src={project.youtubeUrl} title="YouTube video" allowFullScreen></iframe>
+                </div>
+
+            )}
+            <h4 className="text-start mt-4">My Contributions</h4>
+            <ListGroup className="text-start">
+                {project.tasks?.map((task, index) => (
+                    <ListGroup.Item key={index}>{task}</ListGroup.Item>
+                ))}
+            </ListGroup>
+
+            <h4 className="text-start mt-4">Technologies Used</h4>
             <ListGroup className="text-start">
                 {project.technologies.map((tech, index) => (
                     <ListGroup.Item key={index}>{tech}</ListGroup.Item>
