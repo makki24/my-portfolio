@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, ListGroup, Spinner, Carousel } from 'react-bootstrap';
 import { fetchProjects } from '../services/projectService';
-import {Project} from "../data/projectsData";
+import { Project } from "../data/projectsData";
 
 const ProjectDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -24,12 +24,19 @@ const ProjectDetail: React.FC = () => {
             <h2 className="text-start">{project.title}</h2>
             <p className="text-start"><strong>Duration:</strong> {project.duration}</p>
             <p className="text-start">{project.description}</p>
-            {project.youtubeUrl && (
-                <div className="ratio ratio-21x9">
-                    <iframe src={project.youtubeUrl} title="YouTube video" allowFullScreen></iframe>
+
+            {/* Embed Google Drive Video */}
+            {project.driveUrl && (
+                <div className="ratio ratio-16x9 my-4">
+                    <iframe
+                        src={project.driveUrl}
+                        title="Drive video"
+                        allowFullScreen
+                    ></iframe>
                 </div>
             )}
 
+            {/* Image Carousel */}
             {project.images && project.images.length > 0 && (
                 <Carousel className="my-4">
                     {project.images.map((image, index) => (
@@ -47,6 +54,7 @@ const ProjectDetail: React.FC = () => {
                     ))}
                 </Carousel>
             )}
+
             <h4 className="text-start mt-4">My Contributions</h4>
             <ListGroup className="text-start">
                 {project.tasks?.map((task, index) => (

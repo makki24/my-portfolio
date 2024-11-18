@@ -5,7 +5,7 @@ export interface Project {
     duration: string;
     description: string;
     technologies: string[];
-    youtubeUrl?: string;
+    driveUrl?: string;
     clientProject?: boolean;
     images?: string[],
     tasks?: string[];
@@ -21,7 +21,7 @@ export const projects: Project[] = [
                   Integrated email notifications, daily database backups to Google Drive for each environment.
                   Set up CI/CD pipelines using Jenkins and GitHub Actions for automated testing and deployment.`,
         technologies: ['Spring Boot', 'React Native', 'Jenkins', 'GitHub Actions', 'Oracle Cloud', 'Java'],
-        youtubeUrl: "https://www.youtube.com/embed/PWJ5aRLJxDU?rel=0"
+        driveUrl: "https://drive.google.com/file/d/1UCF3sIF7hOzQ9_wXV_S2obKH7vkUsxEx/preview"
     },
     {
         id: 'equity-share',
